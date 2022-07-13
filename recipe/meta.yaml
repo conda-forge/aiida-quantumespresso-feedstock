@@ -20,6 +20,8 @@ requirements:
   - {{ pin_subpackage(name, exact=True) }}
   - {{ pin_subpackage(name_code, exact=True) }}
 
+outputs:
+
   - name:  {{ name }}
     build:
       noarch: python
