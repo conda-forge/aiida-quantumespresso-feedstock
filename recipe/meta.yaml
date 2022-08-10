@@ -1,6 +1,6 @@
 {% set name = "aiida-quantumespresso" %}
-{% set version = "3.5.2" %}
-{% set build = 1 %}
+{% set version = "4.0.0" %}
+{% set build = 0 %}
 {% set name_code = name + ".code" %}
 
 package:
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/aiida-quantumespresso-{{ version }}.tar.gz
-  sha256: 8b33baee5978cfa1d8b05b484e7354a7105c1fa318577110e930df6b254b759f
+  sha256: e9b0809fda8aece9471f2c9db0f174f436c61feeb81bfa8fbb6b43f224a0b87f
 
 build:
   number: {{ build }}
@@ -17,12 +17,12 @@ build:
 
 requirements:
   run:
-  - {{ pin_subpackage(name, exact=True) }}
-  - {{ pin_subpackage(name_code, exact=True) }}
+    - {{ pin_subpackage(name, exact=True) }}
+    - {{ pin_subpackage(name_code, exact=True) }}
 
 outputs:
 
-  - name:  {{ name }}
+  - name: {{ name }}
     build:
       noarch: python
       script: 'python -m pip install . --no-deps --ignore-installed -vvv '
