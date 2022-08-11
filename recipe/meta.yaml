@@ -30,16 +30,17 @@ outputs:
       host:
         - flit-core >=3.4,<4
         - pip
-        - python >=3.6
+        - python >=3.8
       run:
-        - aiida-core.atomic_tools >=1.4.4,<2
-        - aiida-pseudo >=0.6.1,<0.7.0
+        - aiida-core.atomic_tools ~=2.0
+        - aiida-pseudo ~=0.7.0
+        - click ~=8.0
         - importlib_resources
         - jsonschema
         - numpy
         - packaging
-        - python >=3.6
-        - qe-tools >1,<3
+        - python >=3.8
+        - qe-tools ~=2.0
         - xmlschema >=1.2.5,<2
       run_constrained:
         - {{ name_code }} =={{ version }}
@@ -56,7 +57,7 @@ outputs:
       noarch: python
     requirements:
       run:
-        - qe >=6.0,<=7.0
+        - qe >=6.6,<=7.1
     test:
       commands:
         - which pw.x
