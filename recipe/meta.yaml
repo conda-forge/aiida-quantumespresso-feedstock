@@ -33,7 +33,7 @@ outputs:
         - python >=3.8
       run:
         - aiida-core.atomic_tools ~=2.1
-        - aiida-pseudo ~=0.8.0
+        - aiida-pseudo ~=1.0
         - click ~=8.0
         - importlib_resources
         - jsonschema
