@@ -39,7 +39,7 @@ outputs:
         - jsonschema
         - numpy
         - packaging
-        - pydantic
+        - pydantic ~=1.10,>=1.10.8
         - python >=3.8
         - qe-tools ~=2.0
         - xmlschema >=1.2.5,<2
