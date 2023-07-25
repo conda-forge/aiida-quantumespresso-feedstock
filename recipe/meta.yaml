@@ -1,5 +1,5 @@
 {% set name = "aiida-quantumespresso" %}
-{% set version = "4.3.0" %}
+{% set version = "4.4.0" %}
 {% set build = 0 %}
 {% set name_code = name + ".code" %}
 
@@ -8,8 +8,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/aiida-quantumespresso-{{ version }}.tar.gz
-  sha256: f27822e832000459e09a62ec8185e0d1d7c6e40cb2efb1a3457e0bee34a842eb
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: c24a2fefc2adf2c0600772399eb32af443e00cfec39448f3d8e4db5f559f9757
 
 build:
   number: {{ build }}
@@ -39,7 +39,7 @@ outputs:
         - jsonschema
         - numpy
         - packaging
-        - pydantic
+        - pydantic ~=1.10,>=1.10.8
         - python >=3.8
         - qe-tools ~=2.0
         - xmlschema >=1.2.5,<2
