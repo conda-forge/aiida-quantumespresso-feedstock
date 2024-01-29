@@ -32,17 +32,17 @@ outputs:
         - pip
         - python >=3.8
       run:
-        - aiida-core.atomic_tools ~=2.1
-        - aiida-pseudo ~=1.0
+        - aiida-core.atomic_tools ~=2.3
+        - aiida-pseudo ~=1.1
         - click ~=8.0
         - importlib_resources
         - jsonschema
         - numpy
         - packaging
-        - pydantic ~=1.10,>=1.10.8
+        - pydantic ~=2.0
         - python >=3.8
         - qe-tools ~=2.0
-        - xmlschema >=1.2.5,<2
+        - xmlschema ~=2.0
       run_constrained:
         - {{ name_code }} =={{ version }}
     test:
@@ -58,7 +58,7 @@ outputs:
       noarch: python
     requirements:
       run:
-        - qe >=6.6,<=7.1
+        - qe >=6.6,<=7.2
     test:
       commands:
         - which pw.x
