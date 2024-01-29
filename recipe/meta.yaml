@@ -1,5 +1,5 @@
 {% set name = "aiida-quantumespresso" %}
-{% set version = "4.4.0" %}
+{% set version = "4.5.0" %}
 {% set build = 0 %}
 {% set name_code = name + ".code" %}
 
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: c24a2fefc2adf2c0600772399eb32af443e00cfec39448f3d8e4db5f559f9757
+  sha256: 4bbc82bc6571814447026913af248db0fefa68e0f39dc3dee4290b2e84879d7c
 
 build:
   number: {{ build }}
@@ -32,17 +32,17 @@ outputs:
         - pip
         - python >=3.8
       run:
-        - aiida-core.atomic_tools ~=2.1
-        - aiida-pseudo ~=1.0
+        - aiida-core.atomic_tools ~=2.3
+        - aiida-pseudo ~=1.1
         - click ~=8.0
         - importlib_resources
         - jsonschema
         - numpy
         - packaging
-        - pydantic ~=1.10,>=1.10.8
+        - pydantic ~=2.0
         - python >=3.8
         - qe-tools ~=2.0
-        - xmlschema >=1.2.5,<2
+        - xmlschema ~=2.0
       run_constrained:
         - {{ name_code }} =={{ version }}
     test:
@@ -58,7 +58,7 @@ outputs:
       noarch: python
     requirements:
       run:
-        - qe >=6.6,<=7.1
+        - qe >=6.6,<=7.2
     test:
       commands:
         - which pw.x
