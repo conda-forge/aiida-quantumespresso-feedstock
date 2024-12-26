@@ -1,6 +1,6 @@
 {% set name = "aiida-quantumespresso" %}
 {% set version = "4.6.0" %}
-{% set build = 0 %}
+{% set build = 1 %}
 {% set name_code = name + ".code" %}
 
 package:
@@ -8,7 +8,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: bcb64994e820d682bf0bda8f8338315940949cf8d3dbcaad855a30fa6eda1755
 
 build:
@@ -30,7 +30,7 @@ outputs:
       host:
         - flit-core >=3.4,<4
         - pip
-        - python >=3.8
+        - python {{ python_min }}
       run:
         - aiida-core.atomic_tools ~=2.3
         - aiida-pseudo ~=1.1
@@ -40,7 +40,7 @@ outputs:
         - numpy
         - packaging
         - pydantic ~=2.0
-        - python >=3.8
+        - python >={{ python_min }}
         - qe-tools ~=2.0
         - xmlschema ~=2.0
       run_constrained:
@@ -60,6 +60,8 @@ outputs:
       run:
         - qe >=6.6,<=7.2
     test:
+      requires:
+        - python {{ python_min }}
       commands:
         - which pw.x
 
