@@ -33,7 +33,7 @@ outputs:
         - python {{ python_min }}
       run:
         - aiida-core.atomic_tools ~=2.3
-        - aiida-pseudo ~=1.1
+        - aiida-pseudo >=1.7
         - click ~=8.0
         - importlib_resources
         - jsonschema
