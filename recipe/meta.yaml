@@ -1,5 +1,5 @@
 {% set name = "aiida-quantumespresso" %}
-{% set version = "4.15.0" %}
+{% set version = "4.16.0" %}
 {% set build = 0 %}
 {% set name_code = name + ".code" %}
 
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: fb2e5f2cd1382c7720b546a41398d4536f7e6091f067ec9d175c1eb4ab1f5fa2
+  sha256: ee429f382a3daba54cc65b1a1257d554a00214c93d66b85faef0817a11b39c42
 
 build:
   number: {{ build }}
