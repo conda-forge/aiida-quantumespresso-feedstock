@@ -57,13 +57,11 @@ outputs:
 
   - name: {{ name_code }}
     build:
-      noarch: python
+      noarch: generic
     requirements:
       run:
         - qe >=6.6,<=7.4
     test:
-      requires:
-        - python {{ python_min }}
       commands:
         - which pw.x
 
