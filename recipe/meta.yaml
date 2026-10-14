@@ -34,7 +34,7 @@ outputs:
         - hatchling
       run:
         - python >={{ python_min }}
-        - aiida-core.atomic_tools ~=2.8
+        - aiida-core.atomic_tools ~=2.3
         - aiida-pseudo >=1.7.2,<2
         - click ~=8.0
         - importlib_resources
@@ -60,7 +60,7 @@ outputs:
       noarch: generic
     requirements:
       run:
-        - qe >=6.6,<=7.5
+        - qe >=6.6,<=7.4
     test:
       commands:
         - which pw.x
